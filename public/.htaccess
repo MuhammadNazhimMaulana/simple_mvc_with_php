@@ -1,0 +1,13 @@
+Options -Multiviews
+
+#Proses Rewritenya
+RewriteEngine On
+
+#Mengabaikan Folder
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Mengabaikan File
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#Mengambil string setelah public
+RewriteRule ^(.*)$ index.php?url=$1 [L]
