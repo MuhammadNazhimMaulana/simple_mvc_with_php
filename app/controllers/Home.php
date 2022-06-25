@@ -1,10 +1,16 @@
 <?php
 
-class Home{
+class Home extends Controller{
 
     // Method default
     public function index()
     {
-        echo 'Home/Index';
+        $data = [
+            'judul' => 'Halaman About',
+        ];
+
+        $this->view('templates/header', $data);
+        $this->view('home/index');
+        $this->view('templates/footer');
     }
 }
