@@ -1,1 +1,3 @@
-# simple_mvc_with_php
+# PHP MVC
+
+Projek MVC Sederhana dengan PHP
