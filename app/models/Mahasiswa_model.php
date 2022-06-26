@@ -28,4 +28,28 @@ class Mahasiswa_model{
         // Return Value (single value)
         return $this->db->single();
     }
+
+    // Insert Data
+    public function tambahDataMahasiswa($data)
+    {
+        // Query insert
+        $query = "INSERT INTO mahasiswa
+                  VALUES
+                  ('', :nama, :npm, :email, :jurusan)";
+        
+        // Jalankan Query
+        $this->db->query($query);
+
+        // Binding Query
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('npm', $data['npm']);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('jurusan', $data['jurusan']);
+
+        // Eksekusi
+        $this->db->execute();
+        
+        // Mengembalikan angka
+        return $this->db->rowCount();
+    }
 }
