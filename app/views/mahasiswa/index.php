@@ -7,12 +7,29 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-6">
+    <div class="row mb-3">
+        <div class="col-lg-6">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary mb-3 tombolTambahData" data-bs-toggle="modal" data-bs-target="#tambahDataMahasiswa">
             Tambah Data Mahasiswa
             </button>
+        </div>
+    </div>
+
+    <!-- Search -->
+    <div class="row mb-3">
+        <div class="col-lg-6">
+            <form action="<?= BASEURL; ?>/mahasiswa/search" method="post">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Car Mahasiswa" name="keyword" id="keyword" autocomplete="off">
+                    <button class="btn btn-primary" type="submit" id="search-button">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
 
             <h3>Daftar Mahasiswa</h3>
 

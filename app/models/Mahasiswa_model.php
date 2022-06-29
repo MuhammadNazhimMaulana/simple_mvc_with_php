@@ -99,4 +99,24 @@ class Mahasiswa_model{
         // Mengembalikan angka
         return $this->db->rowCount();
     }
+
+    public function cariDataMahasiswa()
+    {
+        // Getting Keyword
+        $keyword = $_POST['keyword'];
+
+        $query = "SELECT * FROM mahasiswa WHERE nama LIKE :keyword";
+
+        // Jalankan Query
+        $this->db->query($query);
+
+        // Binding Query
+        $this->db->bind('keyword', "%$keyword%");
+
+        // Eksekusi
+        $this->db->execute();
+
+        // Return
+        return $this->db->resultSet();
+    }
 }
